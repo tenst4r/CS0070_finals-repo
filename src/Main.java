@@ -36,14 +36,13 @@ public class Main {
                     break;
 
                 case 2:
-                    if (playlist.getCurrentSong() == null) {
-                        System.out.println("Playlist is empty!");
-                        break;
-                    }
                     Song current = playlist.getCurrentSong();
                     System.out.println("Now Playing: " + current.getTitle());
 
-                    player = new WavPlayer(current.getPath());
+                    if (player == null) {
+                        player = new WavPlayer(current.getPath());
+                    }
+
                     player.play();
                     break;
 

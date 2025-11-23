@@ -26,7 +26,10 @@ public class WavPlayer extends AudioPlayer {
         try {
             if (clip == null) return;
 
-            clip.start();
+            if (!clip.isRunning()) {
+                clip.start(); // resumes from last paused frame
+            }
+
             setStatus("Playing");
         } catch (Exception e) {
             System.out.println("Error playing audio.");
