@@ -7,7 +7,7 @@ public class Main {
         Playlist playlist = new Playlist();
         Scanner sc = new Scanner(System.in);
 
-        // Add sONGS HERE
+        // aDD songs here
         playlist.addSong(new Song("Song 1", "playlist/on_tha_line.wav"));
         playlist.addSong(new Song("Song 2", "playlist/Aminé - Colors.wav"));
         playlist.addSong(new Song("Song 3", "playlist/Beneath the Mask.wav"));
@@ -23,7 +23,6 @@ public class Main {
             System.out.println("[5] Next Song");
             System.out.println("[6] Previous Song");
             System.out.println("[7] Choose Song by Number");
-            System.out.println("[8] Set Volume");
             System.out.println("[0] Exit");
             System.out.print("Choose option: ");
 
@@ -76,15 +75,6 @@ public class Main {
                         System.out.println("Selected: " + playlist.getCurrentSong().getTitle());
                     } else {
                         System.out.println("Invalid index.");
-                    }
-                    break;
-
-                case 8:
-                    System.out.print("Enter volume (0–100): ");
-                    int vol = sc.nextInt();
-                    if (player != null) {
-                        player.setVolume(vol);
-                        System.out.println("Volume set to " + player.getVolume());
                     }
                     break;
 

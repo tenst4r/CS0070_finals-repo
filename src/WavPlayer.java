@@ -39,6 +39,7 @@ public class WavPlayer extends AudioPlayer {
             if (clip != null && clip.isRunning()) {
                 clip.stop();
                 setStatus("Paused");
+                System.out.println("Audio paused.");
             }
         } catch (Exception e) {
             System.out.println("Error pausing audio.");
@@ -52,6 +53,7 @@ public class WavPlayer extends AudioPlayer {
                 clip.stop();
                 clip.setFramePosition(0);
                 setStatus("Stopped");
+                System.out.println("Audio Stopped.");
             }
         } catch (Exception e) {
             System.out.println("Error stopping audio.");

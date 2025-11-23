@@ -38,10 +38,17 @@ public class Playlist {
     }
 
     public void showPlaylist() {
+        if (songs.isEmpty()) {
+            System.out.println("Playlist is empty.");
+            return;
+        }
+
         System.out.println("Playlist:");
+
         for (int i = 0; i < songs.size(); i++) {
             System.out.println(i + ". " + songs.get(i));
         }
+        return;
     }
 
     public int size() {
